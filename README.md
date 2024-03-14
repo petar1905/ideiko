@@ -7,3 +7,9 @@
 #### Project Name: Ideiko
 
 #### Description: Social media, similar to Twitter/X.
+
+---
+
+### Links:
+
+- [Views](./docs/Views.md)
