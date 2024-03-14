@@ -6,7 +6,7 @@
 
 #### Project Name: Ideiko
 
-#### Description: Social media, similar to Twitter/X.
+#### Description: Social media platform, similar to Twitter/X.
 
 ---
 

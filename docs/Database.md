@@ -35,5 +35,3 @@
   - Follower ID
   
   - Followed ID
-  
-  - 
