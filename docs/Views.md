@@ -10,7 +10,7 @@
   
   - This view shows all users of the site, sorted by date of registration in descending order.
 
-- /Username/'s lobby
+- /Username/'s room
   
   - This view presents all posts made by the selected user.
   - If this user has allowed, their followers and followed can be seen.
