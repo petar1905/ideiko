@@ -2,6 +2,12 @@
 
 # Views
 
+![Views Diagram](./diagrams/Views.drawio.png)
+
+---
+
+## About Every View
+
 - Stream
   
   - Shows posts of all users followed by the currently logged in user. They are sorted by date in descending order (from most recent to oldest). They are loaded in collections of N amount of posts, and as a result when the user scrolls to the end, a new N amount of posts will be loaded on demand. This is done with the intent of saving computational power on both the database and the client.
@@ -22,17 +28,17 @@
 - Login/Register
   
   - I do not have to explain what these are meant for.
-  
-  ---
-  
-  # Administrator Views
+
+---
+
+## Administrator Views
 
 - Report Directory
   
   - Here are stored all reports sent by users of the site. They may or may not be related to a specific user.
-  
-  ---
-  
-  # Developer Comment
-  
+
+---
+
+## Developer Comment
+
   In my opinion, administrator functions should be integrated as normal buttons, not seperated into an admin panel.
