@@ -10,8 +10,7 @@ class Post extends Model
     use HasFactory;
 
     protected $fillable = [
-        'content', // Content of the post (string)
-        'published_at', // Date of publishing (datetime)
+        'content' // Content of the post (string)
     ];
 
     public function user()
