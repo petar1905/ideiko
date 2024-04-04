@@ -8,16 +8,16 @@ use Tests\TestCase;
 use App\Models\User;
 use App\Models\Post;
 
-class UserTest extends TestCase
+class CreatePostTest extends TestCase
 {
     /**
      * A basic feature test example.
      */
-    public function create_post_and_save(): void
+    public function test_example(): void
     {
         $user = User::factory()->create();
         $usersPost = Post::factory()->create(['user_id' => $user->id]);
         $user->posts()->save($usersPost);
-        echo $user->posts;
+        $this->assertNotTrue(empty($user->posts));
     }
 }
