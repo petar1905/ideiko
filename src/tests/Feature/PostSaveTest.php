@@ -13,7 +13,7 @@ class UserTest extends TestCase
     /**
      * A basic feature test example.
      */
-    public function test_example(): void
+    public function create_post_and_save(): void
     {
         $user = User::factory()->create();
         $usersPost = Post::factory()->create(['user_id' => $user->id]);
