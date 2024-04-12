@@ -12,7 +12,7 @@ class FollowTest extends TestCase
     /**
      * A basic feature test example.
      */
-    public function test_follow(): void
+    public function test_user_can_follow_other_users(): void
     {
         $popular_user = User::factory()->create();
 

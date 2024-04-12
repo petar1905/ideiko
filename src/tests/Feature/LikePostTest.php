@@ -13,7 +13,7 @@ class LikePostTest extends TestCase
     /**
      * A basic feature test example.
      */
-    public function test_example(): void
+    public function test_user_can_like_posts(): void
     {
         $user = User::factory()->create();
         $usersPost = Post::factory()->create(['user_id' => $user->id]);
