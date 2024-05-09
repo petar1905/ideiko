@@ -19,7 +19,6 @@ use App\Services\PostService;
 */
 
 Route::get('/', function () {
-    return Inertia::render('Welcome', [
     return Inertia::render('IdeikoWelcome', [
         'canLogin' => Route::has('login'),
         'canRegister' => Route::has('register'),
