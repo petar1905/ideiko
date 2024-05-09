@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\UserController;
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
@@ -39,6 +40,8 @@ Route::get('/lobby', function () {
         'users' => User::query()->select("*")->paginate(12)
     ]);
 })->middleware(['auth'])->name('lobby');
+
+Route::get('/room', [UserController::class, 'get'])->name('room');
 Route::get('/dashboard', function () {
     return Inertia::render('Dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
