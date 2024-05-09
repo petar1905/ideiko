@@ -6,6 +6,7 @@ use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
 use App\Services\PostService;
+use App\Models\User;
 
 /*
 |--------------------------------------------------------------------------
