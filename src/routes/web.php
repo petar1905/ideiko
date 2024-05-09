@@ -4,6 +4,7 @@ use App\Http\Controllers\ProfileController;
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
+use App\Services\PostService;
 
 /*
 |--------------------------------------------------------------------------
@@ -26,6 +27,12 @@ Route::get('/', function () {
     ]);
 });
 
+Route::get('/stream', function () {
+    $posts = PostService::getAllPosts();
+    return Inertia::render('IdeikoStream', [
+        'posts' => $posts
+    ]);
+})->middleware(['auth'])->name('stream');
 Route::get('/dashboard', function () {
     return Inertia::render('Dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
