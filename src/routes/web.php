@@ -33,6 +33,12 @@ Route::get('/stream', function () {
         'posts' => $posts
     ]);
 })->middleware(['auth'])->name('stream');
+
+Route::get('/lobby', function () {
+    return Inertia::render('IdeikoLobby', [
+        'users' => User::query()->select("*")->paginate(12)
+    ]);
+})->middleware(['auth'])->name('lobby');
 Route::get('/dashboard', function () {
     return Inertia::render('Dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
