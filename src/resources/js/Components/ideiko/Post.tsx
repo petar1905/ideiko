@@ -38,6 +38,7 @@ export default function Post({post}) {
         <CardActions>
             <IconButton>
                 <FavoriteIcon/>
+                {post.like_count}
             </IconButton>
             <IconButton>
                 <CommentIcon/>
