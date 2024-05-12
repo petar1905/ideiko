@@ -52,7 +52,7 @@ export default function IdeikoNavBar({auth}) {
   }
 
   return (
-    <AppBar position="static">
+    <AppBar position="static" component={'header'}>
       <Container maxWidth="xl">
         <Toolbar disableGutters>
           <AdbIcon sx={{ display: { xs: 'none', md: 'flex' }, mr: 1 }} />
@@ -60,7 +60,7 @@ export default function IdeikoNavBar({auth}) {
             variant="h6"
             noWrap
             component="a"
-            href="#app-bar-with-responsive-menu"
+            href="/stream"
             sx={{
               mr: 2,
               display: { xs: 'none', md: 'flex' },
@@ -71,7 +71,7 @@ export default function IdeikoNavBar({auth}) {
               textDecoration: 'none',
             }}
           >
-            LOGO
+            IDEIKO
           </Typography>
 
           <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
@@ -116,7 +116,7 @@ export default function IdeikoNavBar({auth}) {
             variant="h5"
             noWrap
             component="a"
-            href="#app-bar-with-responsive-menu"
+            href="/stream"
             sx={{
               mr: 2,
               display: { xs: 'flex', md: 'none' },
@@ -128,7 +128,7 @@ export default function IdeikoNavBar({auth}) {
               textDecoration: 'none',
             }}
           >
-            LOGO
+            IDEIKO
           </Typography>
           <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
 {/*             {pages.map((page) => (
