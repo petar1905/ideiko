@@ -3,6 +3,7 @@ import CardContent from '@mui/material/CardContent';
 import CardActions from '@mui/material/CardActions';
 import React from "react";
 import Paper from '@mui/material/Paper';
+import IdeikoFollowButton from "./userHeader/IdeikoFollowButton";
 
 export default function IdeikoUserHeader({currentUser, auth}) {
     const style = {
@@ -18,7 +19,7 @@ export default function IdeikoUserHeader({currentUser, auth}) {
             </CardContent>
             {auth.user.id != currentUser.id ? (
                 <CardActions sx={style}>
-                    <Button variant="outlined">Follow</Button>
+                    <IdeikoFollowButton currentUser={currentUser}/>
                 </CardActions>
             ) : null}
         </Card>

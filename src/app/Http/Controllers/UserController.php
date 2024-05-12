@@ -1,13 +1,8 @@
 <?php 
 
 namespace App\Http\Controllers;
-
-use App\Http\Requests\ProfileUpdateRequest;
-use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\Redirect;
 use Inertia\Inertia;
 use Inertia\Response;
 use App\Models\User;
@@ -26,5 +21,13 @@ class UserController extends Controller
             'posts' => $posts,
             'likedPosts' => $liked_posts
         ]);
+    }
+
+    public function follow(Request $request): RedirectResponse
+    {
+        $id = $request->input('id');
+        $user = User::find($id);
+        $request->user()->followed()->toggle($user);
+        return to_route('room', ['id'=>$id]);
     }
 }

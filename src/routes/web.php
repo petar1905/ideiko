@@ -42,6 +42,7 @@ Route::get('/lobby', function () {
 })->middleware(['auth'])->name('lobby');
 
 Route::get('/room', [UserController::class, 'get'])->name('room');
+Route::put('/room', [UserController::class, 'follow'])->name('room.follow');
 Route::get('/dashboard', function () {
     return Inertia::render('Dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
