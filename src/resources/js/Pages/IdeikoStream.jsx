@@ -8,6 +8,7 @@ export default function IdeikoStream({posts, auth}) {
         <Box>
             <IdeikoNavBar auth={auth}/>
             <Box>
+            <Box component={'main'}>
                 {posts.map((post) => {
                     return (
                         <Post post={post}/>

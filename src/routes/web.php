@@ -28,12 +28,7 @@ Route::get('/', function () {
     ]);
 });
 
-Route::get('/stream', function () {
-    $posts = PostService::getAllPosts();
-    return Inertia::render('IdeikoStream', [
-        'posts' => $posts
-    ]);
-})->middleware(['auth'])->name('stream');
+Route::get('/stream', [PostController::class, 'stream'])->middleware(['auth'])->name('stream');
 
 Route::get('/lobby', function () {
     return Inertia::render('IdeikoLobby', [
