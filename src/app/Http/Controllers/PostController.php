@@ -18,4 +18,12 @@ class PostController extends Controller
             'previousPageURL'=> $posts->previousPageUrl()
         ]);
     }
+    public function like(Request $request): RedirectResponse
+    {
+        $id = $request->input('id');
+        $user = Post::find($id);
+        $request->user()->likedPosts()->toggle($user);
+        $origin = $request->header('referer');
+        return redirect($origin);
+    }
 }

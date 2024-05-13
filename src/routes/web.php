@@ -30,6 +30,7 @@ Route::get('/', function () {
 });
 
 Route::get('/stream', [PostController::class, 'stream'])->middleware(['auth'])->name('stream');
+Route::put('/post', [PostController::class, 'like'])->name('post.like');
 
 Route::get('/lobby', [UserController::class, 'lobby'])->middleware(['auth'])->name('lobby');
 Route::get('/room', [UserController::class, 'get'])->name('room');

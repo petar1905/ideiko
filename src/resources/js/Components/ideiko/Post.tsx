@@ -8,7 +8,7 @@ import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 import IconButton from '@mui/material/IconButton';
 
-import FavoriteIcon from '@mui/icons-material/Favorite';
+import IdeikoLikeButton from './post/IdeikoLikeButton';
 import CommentIcon from '@mui/icons-material/Comment';
 import ShareIcon from '@mui/icons-material/Share';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
@@ -19,7 +19,7 @@ import { Link } from '@inertiajs/react';
 export default function Post({post}) {
     const avatar = (
         <Avatar
-        alt={post.user_name}
+        alt={post.user.name}
         src={`/static/images/avatar/${post.user_id}.jpg`}
         />
     );
@@ -39,10 +39,7 @@ export default function Post({post}) {
             </Typography>
         </CardContent>
         <CardActions>
-            <IconButton>
-                <FavoriteIcon/>
-                {post.like_count}
-            </IconButton>
+            <IdeikoLikeButton currentPost={post}/>
             <IconButton>
                 <CommentIcon/>
             </IconButton>

@@ -16,7 +16,7 @@ class Post extends Model
     /**
      * @var array
      */
-    protected $appends = ['like_count'];
+    protected $appends = ['like_count', 'is_liked', 'user_name'];
 
     public function user()
     {
@@ -33,4 +33,12 @@ class Post extends Model
             get: fn () => $this->likedByUsers()->count(),
         );
     }
+
+    protected function isLiked(): Attribute
+    {
+        return new Attribute(
+            get: fn () => $this->likedByUsers->contains(auth()->id()),
+        );
+    }
+
 }
