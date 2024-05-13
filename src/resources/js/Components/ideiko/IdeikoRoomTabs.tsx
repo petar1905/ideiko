@@ -57,14 +57,12 @@ export default function IdeikoRoomTabs({posts, likedPosts}) {
             <Tabs value={value} onChange={handleChange} sx={tabBarStyle}>
             <Tab label="Posts" {...a11yProps(0)}  />
             <Tab label="Liked Posts" {...a11yProps(1)} />
+            <Tab label="Followers" {...a11yProps(2)} />
+            <Tab label="Followed" {...a11yProps(3)} />
             </Tabs>
         </Box>
         <CustomTabPanel value={value} index={0}>
-            {posts.map((post) => {
-                return (
-                    <Post post={post}/>
-                )
-            })}
+          <IdeikoPostList posts={posts}/>
         </CustomTabPanel>
         <CustomTabPanel value={value} index={1}>
             <IdeikoPostList posts={likedPosts}/>
