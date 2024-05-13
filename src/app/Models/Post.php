@@ -41,4 +41,10 @@ class Post extends Model
         );
     }
 
+    protected function userName(): Attribute
+    {
+        return new Attribute(
+            get: fn () => $this->user->name
+        );
+    }
 }
