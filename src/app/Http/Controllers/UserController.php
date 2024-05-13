@@ -7,6 +7,7 @@ use Inertia\Inertia;
 use Inertia\Response;
 use App\Models\User;
 use App\Services\PostService;
+use App\Services\UserService;
 
 class UserController extends Controller
 {
@@ -20,6 +21,16 @@ class UserController extends Controller
             'currentUser' => $user,
             'posts' => $posts,
             'likedPosts' => $liked_posts
+        ]);
+    }
+
+    public function lobby(Request $request): Response
+    {
+        $users = UserService::getAllUsersPaginated();
+        return Inertia::render('IdeikoLobby', [
+            'users' => $users->items(),
+            'nextPageURL' => $users->nextPageUrl(),
+            'previousPageURL'=> $users->previousPageUrl()
         ]);
     }
 
