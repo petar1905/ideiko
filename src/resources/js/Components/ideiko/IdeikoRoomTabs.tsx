@@ -4,6 +4,7 @@ import Tab from '@mui/material/Tab';
 import Typography from '@mui/material/Typography';
 import Box from '@mui/material/Box';
 import Post from './Post';
+import IdeikoPostList from './IdeikoPostList';
 
 interface TabPanelProps {
   children?: React.ReactNode;
@@ -66,11 +67,7 @@ export default function IdeikoRoomTabs({posts, likedPosts}) {
             })}
         </CustomTabPanel>
         <CustomTabPanel value={value} index={1}>
-            {likedPosts.map((post) => {
-                return (
-                    <Post post={post}/>
-                )
-            })}
+            <IdeikoPostList posts={likedPosts}/>
         </CustomTabPanel>
         </Box>
     );
