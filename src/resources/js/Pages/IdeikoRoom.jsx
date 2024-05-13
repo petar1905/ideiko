@@ -4,14 +4,23 @@ import Post from "@/Components/ideiko/Post";
 import IdeikoUserHeader from "@/Components/ideiko/IdeikoUserHeader";
 import IdeikoRoomTabs from "@/Components/ideiko/IdeikoRoomTabs";
 
-export default function IdeikoRoom({currentUser, posts, likedPosts, auth}) {
+export default function IdeikoRoom(
+    {currentUser, posts, likedPosts, followed, followers, auth}) {
     return (
         <Box>
             {console.log(currentUser)}
             {console.log(posts)}
             <IdeikoNavBar auth={auth}/>
-            <IdeikoUserHeader currentUser={currentUser} auth={auth}/>
-            <IdeikoRoomTabs posts={posts} likedPosts={likedPosts}/>
+            <IdeikoUserHeader 
+            currentUser={currentUser} 
+            auth={auth}
+            followedCount={followed.length}
+            followerCount={followers.length}/>
+            <IdeikoRoomTabs 
+            posts={posts} 
+            likedPosts={likedPosts}
+            followed={followed}
+            followers={followers}/>
         </Box>
     )
 }

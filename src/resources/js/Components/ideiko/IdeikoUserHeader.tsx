@@ -5,7 +5,7 @@ import React from "react";
 import Paper from '@mui/material/Paper';
 import IdeikoFollowButton from "./userHeader/IdeikoFollowButton";
 
-export default function IdeikoUserHeader({currentUser, auth}) {
+export default function IdeikoUserHeader({currentUser,followedCount, followerCount, auth}) {
     const style = {
         display: 'flex',
         justifyContent: 'center'
@@ -15,6 +15,12 @@ export default function IdeikoUserHeader({currentUser, auth}) {
             <CardContent>
                 <Typography variant="h5" component="h5" padding={'2em'} textAlign={'center'}>
                     {currentUser.name}
+                </Typography>
+                <Typography component="p" textAlign={'center'}>
+                    Followed: {followedCount}
+                </Typography>
+                <Typography component="p" textAlign={'center'}>
+                    Followers: {followerCount}
                 </Typography>
             </CardContent>
             {auth.user.id != currentUser.id ? (

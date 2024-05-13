@@ -19,10 +19,10 @@ class UserController extends Controller
         $liked_posts = PostService::getLikedPostsPaginated($user);
         return Inertia::render('IdeikoRoom', [
             'currentUser' => $user,
-            'posts' => $posts->items(),
-            'nextPageURL' => $posts->nextPageUrl(),
-            'previousPageURL'=> $posts->previousPageUrl(),
-            'likedPosts' => $liked_posts->items()
+            'posts' => $posts,
+            'likedPosts' => $liked_posts,
+            'followed' => $user->followed,
+            'followers' => $user->followers
         ]);
     }
 
