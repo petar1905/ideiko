@@ -11,7 +11,7 @@ use Inertia\Response;
 class PostController extends Controller
 {
     public function stream(Request $request): Response {
-        $posts = PostService::getAllPosts();
+        $posts = PostService::getAllPostsPaginated();
         return Inertia::render('IdeikoStream', [
             'posts' => $posts->items(),
             'nextPageURL' => $posts->nextPageUrl(),
