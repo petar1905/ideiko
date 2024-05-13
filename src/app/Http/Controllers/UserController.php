@@ -15,12 +15,14 @@ class UserController extends Controller
     {
         $id = $request->input('id');
         $user = User::find($id);
-        $posts = PostService::getPosts($user);
-        $liked_posts = PostService::getLikedPosts($user);
+        $posts = PostService::getPostsPaginated($user);
+        $liked_posts = PostService::getLikedPostsPaginated($user);
         return Inertia::render('IdeikoRoom', [
             'currentUser' => $user,
-            'posts' => $posts,
-            'likedPosts' => $liked_posts
+            'posts' => $posts->items(),
+            'nextPageURL' => $posts->nextPageUrl(),
+            'previousPageURL'=> $posts->previousPageUrl(),
+            'likedPosts' => $liked_posts->items()
         ]);
     }
 
