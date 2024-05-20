@@ -23,6 +23,12 @@ export default function Post({post}) {
         src={`/static/images/avatar/${post.user_id}.jpg`}
         />
     );
+
+    const creation_date = new Date(post.created_at);
+    const day = creation_date.getDate();
+    const month = creation_date.getMonth();
+    const year = creation_date.getFullYear();
+    const formatted_creation_date = `${day}/${month}/${year}`;
   return (
     <Box sx={{ minWidth: 275 }}>
     <Card variant="outlined">
@@ -30,7 +36,7 @@ export default function Post({post}) {
             <CardHeader
             avatar={avatar} 
             title={post.user_name}
-            subheader={post.created_at}>
+            subheader={formatted_creation_date}>
             </CardHeader>
         </Link>
         <CardContent>
