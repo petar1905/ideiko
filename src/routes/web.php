@@ -30,11 +30,16 @@ Route::get('/', function () {
 });
 
 Route::get('/stream', [PostController::class, 'stream'])->middleware(['auth'])->name('stream');
-Route::put('/post', [PostController::class, 'like'])->name('post.like');
+Route::get('/create', [PostController::class, 'creationPage'])->middleware(['auth'])->name('post.creation_page');
+
+Route::get('/post', [PostController::class, 'creationPage'])->middleware(['auth'])->name('post.creation_page'); // TODO get existing post instead
+Route::post('/post', [PostController::class, 'createPost'])->middleware(['auth'])->name('post.create');
+Route::put('/post', [PostController::class, 'like'])->middleware(['auth'])->name('post.like');
 
 Route::get('/lobby', [UserController::class, 'lobby'])->middleware(['auth'])->name('lobby');
-Route::get('/room', [UserController::class, 'get'])->name('room');
-Route::put('/room', [UserController::class, 'follow'])->name('room.follow');
+Route::get('/room', [UserController::class, 'get'])->middleware(['auth'])->name('room');
+Route::put('/room', [UserController::class, 'follow'])->middleware(['auth'])->name('room.follow');
+
 
 Route::get('/dashboard', function () {
     return Inertia::render('Dashboard');

@@ -26,4 +26,16 @@ class PostController extends Controller
         $origin = $request->header('referer');
         return redirect($origin);
     }
+
+    public function creationPage(Request $request): Response {
+        return Inertia::render('IdeikoCreationPage');
+    }
+
+    public function createPost(Request $request): RedirectResponse
+    {
+        $content = $request->input('content');
+        $new_post = new Post(['content' => $content]);
+        auth()->user()->posts()->save($new_post);
+        return to_route('stream');
+    }
 }
