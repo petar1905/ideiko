@@ -1,6 +1,6 @@
 import Button from "@mui/material/Button";
 import React from "react";
-import { router } from '@inertiajs/react'
+import { router } from '@inertiajs/react';
 
 export default function IdeikoFollowButton({currentUser}) {
     const toggleFollow = () => {
